@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from scrape_reviews import get_reviews
-from get_sentiment import get_sentiment
+#from get_sentiment import get_sentiment\
+from get_sentiment_and_summary import get_sentiment_and_summary
 from get_competerior_links import get_competetior_reviews
 import pandas as pd
 
@@ -33,30 +34,38 @@ async def analyze_sentiment(restaurant_name: str):
     res_link = None
     res_name = None
     for index, row in df.iterrows():
-        if res_name_in[0] in row["Link"] and res_name_in[1] in row["Link"]:
+        all_present = True
+        for word in res_name_in:
+            if word not in row["Link"]:
+                all_present = False
+
+        if all_present:
             res_link = row["Link"]
             res_name = row["Name"]
             print("Found the res")
 
 
-    def get_res_name(restaurant_link):
-        for index, row in df.iterrows():
-            if restaurant_link in row["Link"]:
-                restaurant_name = row["Name"]
-
-        return restaurant_name.lower().replace(" ","_")
-
-
     res_name = res_name.lower().replace(" ","_")
     print(res_name, res_link)
 
+    #get reviews of the orignal searched restaurant
     get_reviews(res_name,res_link)
+
+    # get cpompetetior links
     compe_links = get_competetior_reviews(res_link)
 
+    # get competetior reviews
     for link in compe_links:
         get_reviews(get_res_name(link), link)
-    sentiment_score = get_sentiment(res_name)
-    return {"restaurant_name": restaurant_name, "sentiment_score": sentiment_score}
+
+    sentiment_with_summary = {}
+    sentiment_with_summary[1] = get_sentiment_and_summary(res_name)
+    j = 2
+    for link in compe_links:
+        sentiment_with_summary[j] = get_sentiment_and_summary(get_res_name(link))
+        j += 1
+
+    return sentiment_with_summary
 
 if __name__ == "__main__":
     import uvicorn
