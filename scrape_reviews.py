@@ -35,7 +35,6 @@ def get_reviews(res_name, res_link):
                 review_elements = driver.find_elements(By.XPATH, '//*[@id="root"]/div/main/div/section[4]/div/div/section/div[2]/p')
                 #rating_elements = driver.find_elements(By.XPATH, '//*[@id="root"]/div/div[2]/div[3]/div/div/section/div[2]/div[1]/div/div[1]/div/div/div[1]')
                 # print(review_elements,rating_elements)
-                print(review_elements)
                 for review in review_elements:
                     # print(review.text)
                     reviews_writer.writerow([review.text])

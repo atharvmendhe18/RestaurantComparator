@@ -20,9 +20,12 @@ def get_competetior_reviews(og_link):
 
     links = []
     for i in range(1,4):
-        xpath = f'//*[@id="root"]/div/main/div/section[4]/section/section/article[1]/section[2]/section/div/section/section/section/section/section[{i}]/div/a[1]'
-        link_element = driver.find_element(By.XPATH, xpath)
-        links.append(link_element.get_attribute("href"))
+        try:
+            xpath = f'//*[@id="root"]/div/main/div/section[4]/section/section/article[1]/section[2]/section/div/section/section/section/section/section[{i}]/div/a[1]'
+            link_element = driver.find_element(By.XPATH, xpath)
+            links.append(link_element.get_attribute("href"))
+        except:
+            print("Couldnt find the link element")    
 
     driver.quit()    
     
