@@ -115,13 +115,13 @@ async def analyze_sentiment(restaurant_name: str):
         sentiment_with_summary[1] = get_sentiment_and_summary(res_name)
         with open(sentiment_and_summary_db, 'a', newline='', encoding = 'utf-8') as write_summaray:
             writer  = csv.writer(write_summaray)
-            writer.writerow([res_name,sentiment_with_summary[1]['sentiment'], sentiment_with_summary[1]['summary']])
+            writer.writerow([res_name,sentiment_with_summary[1]['sentiment'], sentiment_with_summary[1]['summary'], sentiment_with_summary[1]['dinein_ratings'],sentiment_with_summary[1]['delivery_ratings'],sentiment_with_summary[1]['img_link']])
     else:
         print("Went through the 2nd condtion else")
         print(f"{res_name} alreadys has summary and sentiment stored")
         for index, row in df_sum.iterrows():
             if row['Name'] == res_name:
-                sentiment_with_summary[1] = {"res_name": res_name,"sentiment": row['Sentiment'], "summary": row['Summary']}         
+                sentiment_with_summary[1] = {"res_name": res_name,"sentiment": row['Sentiment'], "summary": row['Summary'], "dinein_ratings": row['Dinein_ratings'], "delivery_ratings": row['Delivery_ratings'], "img_link": row['Img_link']}         
 # get competetior reviews
     j= 2
     for link in compe_links:
@@ -132,14 +132,14 @@ async def analyze_sentiment(restaurant_name: str):
             sentiment_with_summary[j] = get_sentiment_and_summary(comp_res_name)
             with open(sentiment_and_summary_db, 'a', newline='', encoding = 'utf-8') as write_summaray:
                 writer  = csv.writer(write_summaray)
-                writer.writerow([comp_res_name,sentiment_with_summary[j]['sentiment'], sentiment_with_summary[j]['summary']])
+                writer.writerow([comp_res_name,sentiment_with_summary[j]['sentiment'], sentiment_with_summary[j]['summary'], sentiment_with_summary[j]['dinein_ratings'],sentiment_with_summary[j]['delivery_ratings'],sentiment_with_summary[j]['img_link']])
             j += 1
         else:
             print("Went through the 2nd condtion else")
             print(f"{comp_res_name} alreadys has summary and sentiment stored")
             for index, row in df_sum.iterrows():
                 if row['Name'] == comp_res_name:
-                    sentiment_with_summary[j] = {"res_name": comp_res_name,"sentiment": row['Sentiment'], "summary": row['Summary']} 
+                    sentiment_with_summary[j] = {"res_name": comp_res_name,"sentiment": row['Sentiment'], "summary": row['Summary'], "dinein_ratings": row['Dinein_ratings'], "delivery_ratings": row['Delivery_ratings'], "img_link": row['Img_link']} 
                     j += 1
 
 

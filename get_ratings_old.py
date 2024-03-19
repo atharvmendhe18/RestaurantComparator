@@ -28,6 +28,7 @@ def get_res_link(restaurant_name):
         if restaurant_name ==  row["Name"].lower().replace(" ",'_'):
             restaurant_link= row["Link"]   
             break
+    print(f"Getting res link for {restaurant_name}")    
     print(restaurant_link)    
     return restaurant_link
 
@@ -35,6 +36,7 @@ def get_res_link(restaurant_name):
 
 dine_in_ratings_list = []
 delivery_ratings_list = []
+img_links = []
 driver = webdriver.Chrome(options=chrome_options)
 for index, row in df_sen_sum.iterrows():
     dine_in_ratings = None
@@ -42,20 +44,33 @@ for index, row in df_sen_sum.iterrows():
     driver.get(get_res_link(row['Name']))
     try:
         dine_in_ratings = driver.find_element(By.XPATH,'//*[@id="root"]/div/main/div/section[3]/section/section/div/div/div/section/div[1]/div[1]/div/div/div[1]')
-        dine_in_ratings_list.apppend(dine_in_ratings.text)
+        dine_in_ratings_list.append(dine_in_ratings.text)
     except:
         print('Couldnt find dine in ratings')
+        dine_in_ratings_list.append("")
 
     try:
         delivery_ratings = driver.find_element(By.XPATH,'//*[@id="root"]/div/main/div/section[3]/section/section/div/div/div/section/div[3]/div[1]/div/div/div[1]')
         delivery_ratings_list.append(delivery_ratings.text)
     except:
-        print("Couldnt find delivery ratings")    
+        print("Couldnt find delivery ratings")  
+        delivery_ratings_list.append("")  
+
+    try:
+        img_link = driver.find_element(By.XPATH, '//*[@id="root"]/div/main/div/section[2]/div[1]/div/div/img')  
+        img_links.append(img_link.get_attribute('src'))  
+        print(img_link.get_attribute('src'))
+    except:
+        print("Couldnt finf img link")    
+        img_links.append("")
 
 
-df_sen_sum["Dine_in_ratings"] = dine_in_ratings_list
+
+df_sen_sum["Dinein_ratings"] = dine_in_ratings_list
 df_sen_sum["Delivery_ratings"] = delivery_ratings_list
-    
+df_sen_sum['Img_link'] = img_links
+
+df_sen_sum.to_csv(sentiment_and_summary_db,encoding='utf-8', index=False)
         
 
         
