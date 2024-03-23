@@ -1,12 +1,12 @@
 from scrape_reviews import get_reviews
-from get_sentiment import get_sentiment
+from Not_useful.get_sentiment import get_sentiment
 from get_competerior_links import get_competetior_reviews
 import pandas as pd
 
 restaurant_database = r"C:\Desktop\Restaurant_Comparator\data_collection\web_scraping\restaurant_database.csv"
 
 # take input form user about the restaurant
-res_name_in = input("Please enter Restaurant name: ").lower().split(' ')
+res_name_in = input("Please enter Restaurant name: ").lower().split(" ")
 
 df = pd.read_csv(restaurant_database)
 res_link = None
@@ -22,27 +22,15 @@ def get_res_name(restaurant_link):
         if restaurant_link in row["Link"]:
             restaurant_name = row["Name"]
 
-    return restaurant_name.lower().replace(" ","_")
+    return restaurant_name.lower().replace(" ", "_")
 
 
-res_name = res_name.lower().replace(" ","_")
+res_name = res_name.lower().replace(" ", "_")
 
-get_reviews(res_name,res_link)
+get_reviews(res_name, res_link)
 compe_links = get_competetior_reviews(res_link)
 
 for link in compe_links:
     get_reviews(get_res_name(link), link)
 
-print("Searched res Sentiment: ",get_sentiment(res_name))
-
- 
-
-
-
-
-
-
-
-
-
-
+print("Searched res Sentiment: ", get_sentiment(res_name))
