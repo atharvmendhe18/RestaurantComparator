@@ -186,14 +186,17 @@ def analyze_sentiment(restaurant_name):
 
 def main():
     i = 0
-    for index, row in df.iterrows():
+    for index, row in df.iloc[
+        223:
+    ].iterrows():  # change the number everytime you run this file
         try:
             analyze_sentiment(row["Name"])
         except:
             print(f"Some error occured in collecting the data of {row['Name']}")
             pass
+        i += 1
 
-        if i > 3:
+        if i > 5:
             break
 
 

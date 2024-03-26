@@ -101,7 +101,7 @@ def get_sentiment_and_summary(res_name):
             By.XPATH,
             '//*[@id="root"]/div/main/div/section[3]/section/section/div/div/div/section/div[3]/div[1]/div/div/div[1]',
         )
-        delivery_ratings.text
+        delivery_ratings = delivery_ratings.text
     except:
         print("Couldnt find delivery ratings")
 

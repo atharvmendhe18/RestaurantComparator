@@ -26,6 +26,16 @@ def get_reviews(res_name, res_link):
         with open(file_path, "w", newline="", encoding="utf-8") as reviews:
             reviews_writer = csv.writer(reviews)
             driver = webdriver.Chrome(options=chrome_options)
+            driver.get(res_link)
+            permantly_closed = driver.find_element(
+                By.XPATH,
+                '//*[@id="root"]/div/main/div/section[3]/section/section/div/div/section[2]/section/span',
+            )
+            if permantly_closed.text == "Permanently Closed":
+                print("The restaurant is permanently closed. Skipping scraping.")
+                driver.quit()
+                return
+
             reviews_writer.writerow(["Review"])
             next_page_link = res_link
             for _ in range(2, 20):
