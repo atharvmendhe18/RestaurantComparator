@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from scrape_reviews import get_reviews
 from get_sentiment_and_summary import get_sentiment_and_summary
 from get_competerior_links import get_competetior_reviews
+from get_menu_list import get_menu_list
+from scrape_menu import get_menu
 import pandas as pd
 import csv
 from selenium import webdriver
@@ -117,6 +119,7 @@ def analyze_sentiment():
 
     # get reviews of the orignal searched restaurant
     get_reviews(res_name, res_link)
+    get_menu(res_name, res_link)
     df_sum = pd.read_csv(sentiment_and_summary_db)
     sentiment_with_summary = {}
     # get cpompetetior links
@@ -157,6 +160,7 @@ def analyze_sentiment():
     for link in compe_links:
         comp_res_name = get_res_name(link)
         get_reviews(comp_res_name, link)
+        get_menu(comp_res_name, link)
         if comp_res_name not in df_sum["Name"].values:
             print("Went through the 1st condtion if")
             sentiment_with_summary[j] = get_sentiment_and_summary(comp_res_name)
@@ -190,6 +194,7 @@ def analyze_sentiment():
                     }
                     j += 1
     print(sentiment_with_summary)
+    sentiment_with_summary[1]["Menu"] = get_menu_list(res_name)
     return jsonify(sentiment_with_summary)
 
 
