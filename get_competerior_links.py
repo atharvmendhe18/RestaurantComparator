@@ -14,7 +14,7 @@ import time
 import csv
 
 
-def get_competetior_reviews(og_link):
+def get_competetior_links(og_link):
     driver = webdriver.Chrome(options=chrome_options)
     driver.get(og_link)
 

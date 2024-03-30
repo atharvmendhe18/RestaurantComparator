@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 from scrape_reviews import get_reviews
 from get_sentiment_and_summary import get_sentiment_and_summary
-from get_competerior_links import get_competetior_reviews
+from get_competerior_links import get_competetior_links
 from get_menu_list import get_menu_list
 from scrape_menu import get_menu
+from compare_menus import compare_menus
 import pandas as pd
 import csv
 from selenium import webdriver
@@ -117,14 +118,16 @@ def analyze_sentiment():
 
     res_name = res_name.lower().replace(" ", "_")
     print(res_name, res_link)
-
+    global res_list
+    res_list = []
+    res_list.append(res_name) # store res_name to compare menus afterwards
     # get reviews of the orignal searched restaurant
     get_reviews(res_name, res_link)
     get_menu(res_name, res_link)
     df_sum = pd.read_csv(sentiment_and_summary_db)
     sentiment_with_summary = {}
     # get cpompetetior links
-    compe_links = get_competetior_reviews(res_link)
+    compe_links = get_competetior_links(res_link)
 
     if res_name not in df_sum["Name"].values:
         print("Went through the 1st condtion if")
@@ -159,9 +162,12 @@ def analyze_sentiment():
     # get competetior reviews
     j = 2
     for link in compe_links:
+
         comp_res_name = get_res_name(link)
         get_reviews(comp_res_name, link)
         get_menu(comp_res_name, link)
+        res_list.append(comp_res_name
+                        )
         if comp_res_name not in df_sum["Name"].values:
             print("Went through the 1st condtion if")
             sentiment_with_summary[j] = get_sentiment_and_summary(comp_res_name)
@@ -195,8 +201,22 @@ def analyze_sentiment():
                     }
                     j += 1
     print(sentiment_with_summary)
+    print(res_list)
     sentiment_with_summary[1]["Menu"] = get_menu_list(res_name)
     return jsonify(sentiment_with_summary)
+
+@app.route("/compare_menu/", methods=["POST"])
+def compare_menu():
+    print(res_list)
+    req = request.get_json()
+    dish_name = req["query"]
+    return_dict = {}
+    compared_menus = compare_menus(res_list, dish_name)
+
+    for i in range(len(compared_menus)):
+        return_dict[i] = compared_menus[i]
+
+    return jsonify(return_dict)     
 
 
 if __name__ == "__main__":

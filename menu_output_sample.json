@@ -1,0 +1,582 @@
+{
+    "0": [
+        [
+            "Uttapam Onion Butter",
+            "₹125"
+        ],
+        [
+            "Uttapam Masala Butter",
+            "₹135"
+        ],
+        [
+            "Uttapam Butter",
+            "₹120"
+        ],
+        [
+            "Tomato Paneer Uttapam",
+            "₹135"
+        ],
+        [
+            "Tava Paneer Pulav",
+            "₹276"
+        ],
+        [
+            "Pav Single With Butter (1 Pcs)",
+            "₹25"
+        ],
+        [
+            "Paper Butter Sada Dosa",
+            "₹230"
+        ],
+        [
+            "Paper Butter Masala Dosa",
+            "₹260"
+        ],
+        [
+            "Paneer Pakoda",
+            "₹185"
+        ],
+        [
+            "Only Paneer Bhaji",
+            "₹180"
+        ],
+        [
+            "Idli Butter",
+            "₹105"
+        ],
+        [
+            "Dosa Butter Sada",
+            "₹120"
+        ],
+        [
+            "Dosa Butter Masala",
+            "₹125"
+        ],
+        [
+            "Bread Toast Butter",
+            "₹120"
+        ],
+        [
+            "Bread Butter",
+            "₹100"
+        ]
+    ],
+    "1": [
+        [
+            "Veg Kheema Mutter",
+            "₹260"
+        ],
+        [
+            "Toast Butter Jam",
+            "₹115"
+        ],
+        [
+            "Toast Butter",
+            "₹120"
+        ],
+        [
+            "Paneer Tomato Omlet",
+            "₹130"
+        ],
+        [
+            "Paneer Tikka Dry",
+            "₹290"
+        ],
+        [
+            "Paneer Tikka Biryani",
+            "₹330"
+        ],
+        [
+            "Paneer Tawa Pulav",
+            "₹276"
+        ],
+        [
+            "Paneer Tawa",
+            "₹285"
+        ],
+        [
+            "Paneer Spring Roll",
+            "₹280"
+        ],
+        [
+            "Paneer Schezwan Dry",
+            "₹275"
+        ],
+        [
+            "Paneer Satey",
+            "₹315"
+        ],
+        [
+            "Paneer Salt Peppar",
+            "₹305"
+        ],
+        [
+            "Paneer Rara Masala",
+            "₹300"
+        ],
+        [
+            "Paneer Pulav",
+            "₹260"
+        ],
+        [
+            "Paneer Peshawari",
+            "₹270"
+        ],
+        [
+            "Paneer Pav Bhaji",
+            "₹195"
+        ],
+        [
+            "Paneer Patiyala",
+            "₹310"
+        ],
+        [
+            "Paneer Paratha",
+            "₹140"
+        ],
+        [
+            "Paneer Palak",
+            "₹240"
+        ],
+        [
+            "Paneer Pakoda",
+            "₹205"
+        ],
+        [
+            "Paneer Nizami",
+            "₹340"
+        ],
+        [
+            "Paneer Naan",
+            "₹115"
+        ],
+        [
+            "Paneer Mutter Handi",
+            "₹370"
+        ],
+        [
+            "Paneer Mutter Biryani",
+            "₹270"
+        ],
+        [
+            "Paneer Mutter",
+            "₹240"
+        ],
+        [
+            "Paneer Masala",
+            "₹250"
+        ],
+        [
+            "Paneer Manchurian Dry",
+            "₹265"
+        ],
+        [
+            "Paneer Malwani",
+            "₹270"
+        ],
+        [
+            "Paneer Lolypop",
+            "₹305"
+        ],
+        [
+            "Paneer Lazeez",
+            "₹280"
+        ],
+        [
+            "Paneer Lasooni",
+            "₹270"
+        ],
+        [
+            "Paneer Lajawab",
+            "₹290"
+        ],
+        [
+            "Paneer Kolhapuri",
+            "₹255"
+        ],
+        [
+            "Paneer Kofta",
+            "₹265"
+        ],
+        [
+            "Paneer Kadai",
+            "₹285"
+        ],
+        [
+            "Paneer Jalfraize",
+            "₹270"
+        ],
+        [
+            "Paneer Hyderabadi",
+            "₹275"
+        ],
+        [
+            "Paneer Hot Pan",
+            "₹320"
+        ],
+        [
+            "Paneer Handi",
+            "₹360"
+        ],
+        [
+            "Paneer Fried Rice",
+            "₹265"
+        ],
+        [
+            "Paneer Dum Biryani",
+            "₹290"
+        ],
+        [
+            "Paneer Do Abbha",
+            "₹290"
+        ],
+        [
+            "Paneer Crispy",
+            "₹275"
+        ],
+        [
+            "Paneer Chilly Dry",
+            "₹265"
+        ],
+        [
+            "Paneer Chatpata",
+            "₹270"
+        ],
+        [
+            "Paneer Butter Naan",
+            "₹120"
+        ],
+        [
+            "Paneer Butter Masala",
+            "₹260"
+        ],
+        [
+            "Paneer Biryani",
+            "₹270"
+        ],
+        [
+            "Paneer Bhurji",
+            "₹280"
+        ],
+        [
+            "Paneer Bhaji Dosa",
+            "₹170"
+        ],
+        [
+            "Paneer Bhaji",
+            "₹195"
+        ],
+        [
+            "Paneer Banjara Kabab",
+            "₹300"
+        ],
+        [
+            "Paneer 65 Gravy",
+            "₹275"
+        ],
+        [
+            "Paneer 65 Dry",
+            "₹265"
+        ],
+        [
+            "Mush Paneer Biryani",
+            "₹290"
+        ],
+        [
+            "Kaju Mutter",
+            "₹295"
+        ],
+        [
+            "Jal Jeera Water",
+            "₹55"
+        ],
+        [
+            "Cheese Butter Naan",
+            "₹118"
+        ],
+        [
+            "Butter Pav",
+            "₹25"
+        ],
+        [
+            "Bread Butter Jam",
+            "₹105"
+        ],
+        [
+            "Bread Butter",
+            "₹100"
+        ],
+        [
+            "Anar Juice",
+            "₹150"
+        ],
+        [
+            "Alu Mutter",
+            "₹190"
+        ]
+    ],
+    "2": [
+        [
+            "Toast Butter",
+            "₹79"
+        ],
+        [
+            "Toast Bread Butter Jam",
+            "₹89"
+        ],
+        [
+            "Paneer Tikka",
+            "₹249"
+        ],
+        [
+            "Paneer Tawa Pulav",
+            "₹239"
+        ],
+        [
+            "Paneer Spring Roll",
+            "₹239"
+        ],
+        [
+            "Paneer Satay Dry",
+            "₹239"
+        ],
+        [
+            "Paneer Pulav",
+            "₹219"
+        ],
+        [
+            "Paneer Pav Bhaji",
+            "₹189"
+        ],
+        [
+            "Paneer Pasanda",
+            "₹239"
+        ],
+        [
+            "Paneer Palak",
+            "₹239"
+        ],
+        [
+            "Paneer Pakoda",
+            "₹149"
+        ],
+        [
+            "Paneer Pahadi",
+            "₹249"
+        ],
+        [
+            "Paneer Mutter",
+            "₹239"
+        ],
+        [
+            "Paneer Mushroom Masala",
+            "₹269"
+        ],
+        [
+            "Paneer Masala",
+            "₹239"
+        ],
+        [
+            "Paneer Malai Tikka",
+            "₹269"
+        ],
+        [
+            "Paneer Lababdar",
+            "₹289"
+        ],
+        [
+            "Paneer Kung Pao",
+            "₹269"
+        ],
+        [
+            "Paneer Kulcan",
+            "₹289"
+        ],
+        [
+            "Paneer Kolhapuri",
+            "₹239"
+        ],
+        [
+            "Paneer Kofta",
+            "₹269"
+        ],
+        [
+            "Paneer Kaju Curry",
+            "₹269"
+        ],
+        [
+            "Paneer Kadai",
+            "₹269"
+        ],
+        [
+            "Paneer In Hunan Sauce",
+            "₹259"
+        ],
+        [
+            "Paneer In Black Bean Sauce",
+            "₹259"
+        ],
+        [
+            "Paneer In Barbeque Sauce",
+            "₹259"
+        ],
+        [
+            "Paneer Handi",
+            "₹269"
+        ],
+        [
+            "Paneer Crispy",
+            "₹239"
+        ],
+        [
+            "Paneer Chilli Dry",
+            "₹229"
+        ],
+        [
+            "Paneer Butter Masala",
+            "₹259"
+        ],
+        [
+            "Paneer Butter Garlic Sauce",
+            "₹269"
+        ],
+        [
+            "Paneer Biryani",
+            "₹239"
+        ],
+        [
+            "Paneer Bhurji",
+            "₹249"
+        ],
+        [
+            "Paneer Afgani",
+            "₹289"
+        ],
+        [
+            "Paneer 65 Dry",
+            "₹249"
+        ],
+        [
+            "Butter Pav",
+            "₹20"
+        ],
+        [
+            "Bread Butter Jam",
+            "₹79"
+        ],
+        [
+            "Bread Butter",
+            "₹69"
+        ],
+        [
+            "Aloo Mutter",
+            "₹169"
+        ]
+    ],
+    "3": [
+        [
+            "Paneer Tikka Biryani",
+            "₹310"
+        ],
+        [
+            "Paneer Tikka",
+            "₹270"
+        ],
+        [
+            "Paneer Tawa Masala",
+            "₹330"
+        ],
+        [
+            "Paneer Schezwan",
+            "₹260"
+        ],
+        [
+            "Paneer Satay",
+            "₹300"
+        ],
+        [
+            "Paneer Pulao",
+            "₹260"
+        ],
+        [
+            "Paneer Pasanda",
+            "₹260"
+        ],
+        [
+            "Paneer Palak",
+            "₹250"
+        ],
+        [
+            "Paneer Pakoda",
+            "₹170"
+        ],
+        [
+            "Paneer Matar",
+            "₹220"
+        ],
+        [
+            "Paneer Masala",
+            "₹250"
+        ],
+        [
+            "Paneer Manchurian",
+            "₹240"
+        ],
+        [
+            "Paneer Malai Tikka",
+            "₹280"
+        ],
+        [
+            "Paneer Laziz",
+            "₹330"
+        ],
+        [
+            "Paneer Lajawab",
+            "₹330"
+        ],
+        [
+            "Paneer Kofta",
+            "₹290"
+        ],
+        [
+            "Paneer Kadai",
+            "₹270"
+        ],
+        [
+            "Paneer Handi",
+            "₹270"
+        ],
+        [
+            "Paneer Garlic",
+            "₹250"
+        ],
+        [
+            "Paneer Crispy",
+            "₹270"
+        ],
+        [
+            "Paneer Chingari",
+            "₹330"
+        ],
+        [
+            "Paneer Chilli",
+            "₹240"
+        ],
+        [
+            "Paneer Butter Masala",
+            "₹280"
+        ],
+        [
+            "Paneer Biryani",
+            "₹260"
+        ],
+        [
+            "Paneer Angara",
+            "₹350"
+        ],
+        [
+            "Paneer 65",
+            "₹250"
+        ]
+    ]
+}
