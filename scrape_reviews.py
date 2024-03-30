@@ -15,13 +15,15 @@ import time
 import csv
 import os
 
+project_directory = os.path.dirname(os.path.abspath(__file__))
+
 
 # input links sorted in other file system, direct zomato link will be provided
 def get_reviews(res_name, res_link):
 
     restaurant_name = res_name  # this name will be obtained from the database
 
-    file_path = f"/Users/atharvmendhe/Documents/Zomato_compatator/RestaurantComparator/Database/{restaurant_name}_reviews.csv"
+    file_path = f"{project_directory}/Database/{restaurant_name}_reviews.csv"
     if not os.path.exists(file_path):
         with open(file_path, "w", newline="", encoding="utf-8") as reviews:
             reviews_writer = csv.writer(reviews)

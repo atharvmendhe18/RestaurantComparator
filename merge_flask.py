@@ -25,8 +25,9 @@ import os
 
 app = Flask(__name__)
 
-restaurant_database = "/Users/atharvmendhe/Documents/Zomato_compatator/RestaurantComparator/Database/restaurant_database.csv"
-sentiment_and_summary_db = "/Users/atharvmendhe/Documents/Zomato_compatator/RestaurantComparator/Database/sentiment_and_summary_database.csv"
+project_directory = os.path.dirname(os.path.abspath(__file__))
+restaurant_database = f"{project_directory}/Database/restaurant_database.csv"
+sentiment_and_summary_db = f"{project_directory}/Database/sentiment_and_summary_database.csv"
 
 # Load the restaurant database
 df = pd.read_csv(restaurant_database)
