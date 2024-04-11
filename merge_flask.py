@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from scrape_reviews import get_reviews
 from get_sentiment_and_summary import get_sentiment_and_summary
 from get_competerior_links import get_competetior_links
@@ -25,10 +26,12 @@ import csv
 import os
 
 app = Flask(__name__)
-
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 project_directory = os.path.dirname(os.path.abspath(__file__))
 restaurant_database = f"{project_directory}/Database/restaurant_database.csv"
-sentiment_and_summary_db = f"{project_directory}/Database/sentiment_and_summary_database.csv"
+sentiment_and_summary_db = (
+    f"{project_directory}/Database/sentiment_and_summary_database.csv"
+)
 
 # Load the restaurant database
 df = pd.read_csv(restaurant_database)
@@ -120,7 +123,7 @@ def analyze_sentiment():
     print(res_name, res_link)
     global res_list
     res_list = []
-    res_list.append(res_name) # store res_name to compare menus afterwards
+    res_list.append(res_name)  # store res_name to compare menus afterwards
     # get reviews of the orignal searched restaurant
     get_reviews(res_name, res_link)
     get_menu(res_name, res_link)
@@ -166,8 +169,7 @@ def analyze_sentiment():
         comp_res_name = get_res_name(link)
         get_reviews(comp_res_name, link)
         get_menu(comp_res_name, link)
-        res_list.append(comp_res_name
-                        )
+        res_list.append(comp_res_name)
         if comp_res_name not in df_sum["Name"].values:
             print("Went through the 1st condtion if")
             sentiment_with_summary[j] = get_sentiment_and_summary(comp_res_name)
@@ -205,6 +207,7 @@ def analyze_sentiment():
     sentiment_with_summary[1]["Menu"] = get_menu_list(res_name)
     return jsonify(sentiment_with_summary)
 
+
 @app.route("/compare_menu/", methods=["POST"])
 def compare_menu():
     print(res_list)
@@ -216,7 +219,7 @@ def compare_menu():
     for i in range(len(compared_menus)):
         return_dict[i] = compared_menus[i]
 
-    return jsonify(return_dict)     
+    return jsonify(return_dict)
 
 
 if __name__ == "__main__":
